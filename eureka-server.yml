@@ -1,0 +1,19 @@
+server:
+  port: 8761  # Default Eureka server port
+
+spring:
+  application:
+    name: EUREKA-SERVER
+
+eureka:
+  client:
+    register-with-eureka: false  # Server should not register itself
+    fetch-registry: false        # Server does not need to fetch registry
+  server:
+    enable-self-preservation: true  # Optional: avoid mass eviction in network issues
+    eviction-interval-timer-in-ms: 60000  # Interval to evict inactive clients (default 60s)
+
+logging:
+  level:
+    com.netflix.eureka: OFF
+    org.springframework.cloud.netflix.eureka: INFO
